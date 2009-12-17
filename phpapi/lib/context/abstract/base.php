@@ -1,6 +1,5 @@
 <?php
 abstract class lib_context_abstract_base
-implements lib_context_interface_base
 {
   protected
     $context = null;

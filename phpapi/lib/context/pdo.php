@@ -1,20 +1,25 @@
 <?php
 class lib_context_pdo
+extends lib_context_base
 {
-  public function __construct(lib_context_base $context)  
-  {
-    
-  }
-  
   public function execute()
   {
-    if(is_null($this->dbh)) 
-        $this->dbh = new PDO(
-          $this->dsn, 
-          $this->user, 
-          $this->password
+    try
+    {
+      if(is_null($this->dbh))
+      {
+        $this->dbh = new lib_pdo(
+          $this->get('dsn'), 
+          $this->get('user'), 
+          $this->get('password')
         );
+      }
         
-    return $this->dbh;    
+      return $this->dbh;    
+    }
+    catch (PDOException $e)
+    {
+      throw $e;
+    }
   }
 }

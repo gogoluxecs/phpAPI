@@ -9,8 +9,8 @@ implements lib_context_interface_base
   public function get($k = null)
   {
     if(is_null($k))
-      return $this->context;
-
+      return $this;
+      
     if(isset($this->data[$k]))
       return $this->data[$k];
 
@@ -22,11 +22,6 @@ implements lib_context_interface_base
     if($k instanceof lib_context_interface_base)
       $this->context = $k;
       
-    $this->date[$k] = $v;   
-  }
-  
-  public function getPdo()
-  {
-    ;   
+    $this->data[$k] = $v;   
   }
 }
