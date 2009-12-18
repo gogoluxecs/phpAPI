@@ -38,6 +38,9 @@ extends lib_app_context_base
    */
   public function getHTTP()
   {
-    return $this->http;
+    if(is_null($this->httph))
+      $this->httph = $this->http->execute();
+    
+    return $this->httph;
   }
 }

@@ -6,6 +6,7 @@ class lib_app_context_base
 extends lib_context_base
 {
   protected
+    $http = null,
     $xmpp = null, 
     $pdo = null;
   
@@ -39,7 +40,7 @@ extends lib_context_base
     if(is_null($this->http))
       $this->http = new lib_context_http();
       
-    return $this->http;   
+    return $this->http;
   }
 
   /**
