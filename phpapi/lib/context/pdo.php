@@ -2,6 +2,10 @@
 class lib_context_pdo
 extends lib_context_base
 {
+  
+  /**
+   * @return lib_pdo
+   */
   public function execute()
   {
     try

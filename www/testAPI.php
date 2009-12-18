@@ -3,9 +3,13 @@ require_once '../phpapi/init.php';
 
 $start = microtime(true);
 echo '<pre>';
-for($i = 0; $i < 10000; $i++)
-  $context->getPDO();
-var_dump($context);
+
+$context->getXMPP()->getContext()->setUser('georgi lambov');
+$context->getXMPPContext()->setHost('testhost');
+
+$context->getXMPP()->init();
+  
+  
 echo '</pre>';
 $end = microtime(true);
 

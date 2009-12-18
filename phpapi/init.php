@@ -13,12 +13,18 @@ set_include_path(
   . PATH_SEPARATOR . dirname(__FILE__).'/lib/');
 
 require_once 'external/src/com/google/code/konstrukt/konstrukt.inc.php';
+require_once 'external/src/com/google/code/XMPPHP/XMPP.php';
+
 set_error_handler('k_exceptions_error_handler');
 spl_autoload_register('k_autoload');
 
 // context
 $context = new lib_app_context();
 
-$context->getPDOContext()->set('dsn', localConfig::PDO_DSN);
+// init PDO Context
+$context->getPDOContext()->set('dsn', localConfig::PDO_DSN_DEFAULT);
 $context->getPDOContext()->set('user', localConfig::PDO_USER);
 $context->getPDOContext()->set('password', localConfig::PDO_PASSWORD);
+
+// init XMPP Context
+$context->getXMPPContext();

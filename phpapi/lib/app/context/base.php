@@ -23,12 +23,23 @@ extends lib_context_base
   /**
    * @return lib_context_xmpp
    */
-  public function getXmppContext()
+  public function getXMPPContext()
   {
     if(is_null($this->xmpp))
       $this->xmpp = new lib_context_xmpp();
       
     return $this->xmpp;    
+  }
+  
+  /**
+   * @return lib_context_http
+   */
+  public function getHTTPContext()
+  {
+    if(is_null($this->http))
+      $this->http = new lib_context_http();
+      
+    return $this->http;   
   }
 
   /**

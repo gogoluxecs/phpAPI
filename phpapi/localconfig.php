@@ -4,7 +4,9 @@
  */
 class localConfig
 {
-  const PDO_DSN = 'mysql:dbname=testdb;host=127.0.0.1';
+  const PDO_DSN_DEFAULT = 'mysql:dbname=testdb;host=127.0.0.1';
+  // place holder of other dsn's
+  
   const PDO_USER = 'root';
   const PDO_PASSWORD = '';
 }

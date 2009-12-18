@@ -1,4 +1,7 @@
 <?php
+/**
+ * Basic abstract context class
+ */
 abstract class lib_context_abstract_base
 {
   protected

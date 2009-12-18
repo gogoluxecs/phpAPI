@@ -6,8 +6,9 @@ class lib_app_context
 extends lib_app_context_base
 {
   /**
+   * Initialize PDO
    * 
-   * @return unknown_type
+   * @return lib_pdo
    */
   public function getPDO()
   {
@@ -15,5 +16,28 @@ extends lib_app_context_base
       $this->dbh = $this->pdo->execute();
 
     return $this->dbh;   
+  }
+
+  /**
+   * Initialize XMPP
+   * 
+   * @return lib_xmpp
+   */
+  public function getXMPP()
+  {
+    if(is_null($this->xmpph))      
+      $this->xmpph = $this->xmpp->execute();
+    
+    return $this->xmpph;    
+  }
+  
+  /**
+   * Initialize HTTP (REST)
+   * 
+   * @return lib_http
+   */
+  public function getHTTP()
+  {
+    return $this->http;
   }
 }
