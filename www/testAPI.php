@@ -12,7 +12,7 @@ $context->getRender();
 // XMPP
 // http://code.google.com/p/xmpphp/
 $context->getXMPPContext()->setUser('testuser');
-$context->getXMPPContext()->setHost('xmpp.ovi.east.fi');
+$context->getXMPPContext()->setHost('xmpp.host');
 
 $context->getXMPP()->init();
 
