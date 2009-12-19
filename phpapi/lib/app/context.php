@@ -43,4 +43,15 @@ extends lib_app_context_base
     
     return $this->httph;
   }
+  
+  /**
+   * @return Smarty
+   */
+  public function getRender()
+  {
+    if(is_null($this->render))
+      $this->render = $this->http->getSmarty();
+
+    return $this->render;   
+  }
 }

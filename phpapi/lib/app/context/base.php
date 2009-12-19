@@ -38,7 +38,7 @@ extends lib_context_base
   public function getHTTPContext()
   {
     if(is_null($this->http))
-      $this->http = new lib_context_http();
+      $this->http = new lib_context_http($this->get());
       
     return $this->http;
   }

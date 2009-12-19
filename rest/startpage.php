@@ -1,8 +1,9 @@
 <?php
 class rest_startpage
+extends lib_httpAction
 {
   public function execute()
   {
-    echo '<root>root page</root>';
+    echo '<root>start page</root>';
   }
 }

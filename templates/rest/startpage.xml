@@ -1,0 +1,5 @@
+<response>
+	<page>
+		<name>{$name}</name>
+	</page>	
+</response>

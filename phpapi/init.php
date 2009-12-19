@@ -15,7 +15,9 @@ set_include_path(
 
 require_once 'external/src/com/google/code/konstrukt/konstrukt.inc.php';
 require_once 'external/src/com/google/code/XMPPHP/XMPP.php';
+require_once 'external/src/net/smarty/Smarty-2.6.26/libs/Smarty.class.php';
 
+date_default_timezone_set('Europe/Paris');
 set_error_handler('k_exceptions_error_handler');
 spl_autoload_register('k_autoload');
 
@@ -32,3 +34,6 @@ $context->getPDOContext()->set('password', localConfig::PDO_PASSWORD);
 $context->getXMPPContext();
 
 $context->getHTTPContext();
+
+$context->getRender()->template_dir = localConfig::RENDER_TEMPLATE_DIR;
+$context->getRender()->compile_dir = localConfig::RENDER_TEMPLATE_DIR .'_c';
